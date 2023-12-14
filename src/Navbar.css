@@ -1,0 +1,51 @@
+.navbar.container{
+    align-items: center;
+        display: flex;
+        flex-wrap: inherit;
+        justify-content: space-between;
+    }
+
+    .container{
+            --bs-gutter-x: 2.5rem;
+                --bs-gutter-y: 0;
+                margin-left: auto;
+                margin-right: auto;
+    }
+
+        .navbar .navbar-toggler {
+            border: 2px solid var(--bs-dark);
+            color: var(--bs-dark);
+            font-size: 1.5rem;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .navbar-toggler{
+             border-radius: var(--bs-navbar-toggler-border-radius);;
+        }
+
+                .offcanvas.show:not(.hiding),
+                .offcanvas.showing {
+                    transform: none;
+                }
+
+                                .offcanvas.show,
+                                .offcanvas.showing {
+                                    visibility: visible;
+                                }
+        
+                .offcanvas.offcanvas-start {
+                    border-right: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+                }
+
+                                .offcanvas {
+                                    background-clip: padding-box;
+                                    background-color: var(--bs-offcanvas-bg);
+                                    bottom: 0;
+                                    color: var(--bs-offcanvas-color);
+                                    display: flex;
+                                    flex-direction: column;
+                                    max-width: 100%;
+                                    outline: 0;
+                                    position: fixed;
+                                    transition: var(--bs-offcanvas-transition);
+                                }
