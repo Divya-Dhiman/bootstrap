@@ -1,11 +1,15 @@
 import React from 'react';
-import Navbar from './Navbar';
+import AppHeader from './Navbar';
+import Pattern from './Components/Pattern.jsx'
+import Footer from './Footer.jsx';
 
 function App() {
   return (
-    <div>
-      <Navbar/>
-    </div>
+    <>
+    <AppHeader/>
+    <Pattern/>
+    <Footer/>
+    </>
   )
 }
 
