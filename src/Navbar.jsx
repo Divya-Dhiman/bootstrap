@@ -1,31 +1,37 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import blog from './blog.svg'
 import './Navbar.css'
 
 function AppHeader() {
+    const [showOffcanvas, setShowOffcanvas] = useState(false);
+
+      const handleToggleOffcanvas = () => {
+    setShowOffcanvas(!showOffcanvas);
+  };
+
   return (
     <>
-    <header>
-      <Navbar expand="lg" className="navbar navbar-expand-lg navbar-light w-100">
+     <header>
+      <Navbar expand="lg" variant="light" className="w-100">
         <div className="container px-3">
           <Navbar.Brand href="./index.html">
-            <img src={blog} alt="blog" />
+            <img src={blog} alt="" />
           </Navbar.Brand>
-          <button className="navbar-toggler offcanvas-nav-btn" type="button">
-            <i className="bi bi-list">
-            </i>
-          </button>
-<div class="offcanvas offcanvas-start offcanvas-nav show" style={{ width: '20rem' }} data-asia-model="true" role="dialog">
-            <div className="offcanvas-header">
-              <a href="./index.html" className="text-inverse">
-                <img src={blog} alt="blog" />
-              </a>
-              <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div className="offcanvas-body pt-0 align-items-center">
-              <Nav className="navbar-nav mx-auto align-items-lg-center">
+          <Navbar.Toggle className="offcanvas-nav-btn" onClick={handleToggleOffcanvas}>
+            <i className="bi bi-list"></i>
+          </Navbar.Toggle>
+          <Navbar.Collapse>
+            <div className={`offcanvas offcanvas-start offcanvas-nav ${showOffcanvas ? 'show' : ''}`} style={{ width: '20rem' }}>
+              <div className="offcanvas-header">
+                <a href="./index.html" className="text-inverse">
+                  <img src={blog} alt="" />
+                </a>
+                <button type="button" className="btn-close" onClick={handleToggleOffcanvas} aria-label="Close"></button>
+              </div>
+              <div className="offcanvas-body pt-0 align-items-center">
+                 <Nav className="navbar-nav mx-auto align-items-lg-center">
                 <NavDropdown title="Landings" id="landings-dropdown">
                   <NavDropdown.Item >Landing Overview</NavDropdown.Item>
                   <NavDropdown.Item >Saas v.1</NavDropdown.Item>
@@ -77,12 +83,13 @@ function AppHeader() {
                   Create account
                 </a>
               </div>
+              </div>
             </div>
-          </div>
+          </Navbar.Collapse>
         </div>
       </Navbar>
-
     </header>
+   
 
     </>
     
