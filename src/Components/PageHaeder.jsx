@@ -3,7 +3,6 @@ import React from 'react'
 function PageHaeder() {
   return (
     <div>
-      {/* pageheader start */}
       <section className="py-5 py-lg-8">
         <div className='row'>
           <div className='col-lg-8 offset-lg-2 col-md-12 col-12'>
@@ -17,7 +16,6 @@ function PageHaeder() {
           </div>
         </div>
       </section>
-      {/* pageheader end */}
     </div>
   )
 }
